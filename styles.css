@@ -151,6 +151,7 @@ header .btnCreateTask {
     outline: 2px solid #e1e5ee;
     border-radius: 4px;
     height: 60px;
+    padding: 0px 30px;
     /* justify-content: space-around; */
     /* align-items: center; */
 }
@@ -161,18 +162,15 @@ header .btnCreateTask {
 
 .todo-list .check-toggle, .circle {
     position: absolute;
-    left: 25px;
+    left: 30px;
 }
 
 .todo-list .circle {
-    color: #EDAE49;
     border: solid 4px ;
     width: 35px;
     height: 35px;
     border-radius: 100%;
-    /* no definitivo */
-    position: absolute;
-    left: 26.7px;
+    /* left: 27px; */
 }
 
 .todo-list .check-toggle {
@@ -182,13 +180,45 @@ header .btnCreateTask {
     appearance: none;
     transition: all .1s;
     border-radius: 100%;
-
 }
 
 .todo-list .check-toggle:checked{
 	background-repeat: no-repeat;
     background-image: url('/src/assets/icons/check.svg');
 }
+
+.todo-list .circle.house {
+    color: #e63946;
+}
+.todo-list .circle.personal {
+    color: #adcba3;
+}
+.todo-list .circle.study {
+    color: #a8dadc;
+}
+.todo-list .circle.work {
+    color: #457b9d;
+}
+.todo-list .circle.workout {
+    color: #1d3557;
+}
+
+.todo-list .check-toggle:checked.house{
+    background: #e63946;
+}
+.todo-list .check-toggle:checked.personal{
+    background: #adcba3;
+}
+.todo-list .check-toggle:checked.study{
+    background: #a8dadc;
+}
+.todo-list .check-toggle:checked.work{
+    background: #457b9d;
+}
+.todo-list .check-toggle:checked.workout{
+    background: #1d3557;
+}
+
 
 .todo-list label {
     font-weight: 700;
@@ -203,8 +233,8 @@ header .btnCreateTask {
 }
 
 .todo-list li .destroy {
-    display: none;
-    right: 20px;
+    /* display: none; */
+    right: 25px;
     position: absolute;
     border: none;
 	background: none;
@@ -236,7 +266,7 @@ header .btnCreateTask {
                         /* Aside */
 
 .container-main aside {
-    /* position: sticky; */
+    /* position: fixed; */
     display: flex;
     flex-direction: column;
     gap: 20px;
