@@ -129,13 +129,6 @@ header .btnCreateTask {
     cursor: pointer;
 }
 
-.todoapp .filters .active::before {
-    content: "";
-    width: px;
-    height: 10px;
-    background: #000;
-}
-
 .hidden {
     display: none;
 }
