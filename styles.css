@@ -65,6 +65,7 @@ header .btnCreateTask {
                         /* todo input */
 
 .todoapp .create-container {
+    display: none;
     position: relative;
     opacity: 0;
     height: 0;
