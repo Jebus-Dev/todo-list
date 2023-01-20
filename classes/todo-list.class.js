@@ -4,7 +4,6 @@ import {} from './todo.class.js'
 
 export class TodoList {
     constructor() {
-        // this.todos = [];
         this.loadLocalStorage();
     }
 
@@ -43,11 +42,11 @@ export class TodoList {
 
     saveLocalStorage(){
         localStorage.setItem('todo', JSON.stringify(this.todos));
+        localStorage.setItem('todosDondeStorage', '')
     }
 
     loadLocalStorage(){
         this.todos = ( localStorage.getItem('todo') ) ? JSON.parse( localStorage.getItem('todo')) : []; 
         this.todos = this.todos.map( Todo.fromJson);
-        // funcTodosDone();
     }
 }

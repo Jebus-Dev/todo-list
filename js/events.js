@@ -34,6 +34,7 @@ export const crearTodoHtml = ( todo ) => {
 export const funcTodosDone = () => {
     let todosFilter = todoList.todos.filter(done => done.completado)
     todosDone.innerText = `${todosFilter.length} todo's done`;
+    return todosFilter.length;
 }
 
 
@@ -65,19 +66,23 @@ divTodoList.addEventListener('click', (e) => {
     if ( nombreElemento.includes('input') ) { 
         todoList.toggleTodo( todoId );
         todoElemento.classList.toggle('completed');
-
+        funcTodosDone();
     } else if (nombreElemento.includes('button')) {
         todoList.deleteTodo( todoId );
         divTodoList.removeChild( todoElemento );
     }
-    funcTodosDone();
 })
 
-btnDelDone.addEventListener("click", () => {
+btnDelDone.addEventListener('click', () => {
     todoList.deleteCompleted();
-    funcTodosDone();
+    const nombreElemento = e.target.localName;
+    const todoElemento = e.target.parentElement;
+    const todoId = todoElemento.getAttribute('data-id');
+    if ( nombreElemento.includes('completed') ) { 
+        funcTodosDone();
+    }
+})
 
-}) 
 
 createButton.addEventListener('click', () => {
     createContainer.style.display = "block";
