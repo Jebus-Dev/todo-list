@@ -6,7 +6,7 @@ import { todoList} from '../main.js'
 export const divTodoList = document.querySelector('.todo-list')
 const todosDone = document.querySelector('#todos-done');
 const txtInput = document.querySelector('#input-todo');
-// const btnDelDone = document.querySelector('.todo-delete');
+const btnDelDone = document.querySelector('.todo-delete');
 const createButton = document.querySelector('#btnCreateTask');
 const ulFilter = document.querySelector('.filters');
 const category = document.querySelector('#filter-tag');
@@ -74,10 +74,10 @@ divTodoList.addEventListener('click', (e) => {
     }
 })
 
-// btnDelDone.addEventListener('click', () => {
-//     todoList.deleteCompleted();
-//     funcTodosDone();
-// })
+btnDelDone.addEventListener('click', () => {
+    todoList.deleteCompleted();
+    funcTodosDone();
+})
 
 
 createButton.addEventListener('click', () => {
