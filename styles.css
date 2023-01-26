@@ -19,16 +19,9 @@ body {
     font-size: var(--textClamp);
 }
 
-.container-main {
-    display: grid;  
-    gap: 20px;
-    grid-template-columns: 1fr;
-    color: var(--mainTextColor);
-}
-
 .todoapp {
     width: clamp(400px, 90vw, 800px);
-    margin: auto;
+    margin: 10px auto;
     border-radius: var(--radius);
     background: #fff;
     box-shadow: 0 0 50px #d5d5d5;
@@ -65,7 +58,7 @@ header .btnCreateTask {
 header .btnCreateTask:hover {
     background: #98dfaf;
 }
-                        /* todo input */
+/* --------------------------- input --------------------------- */
 
 .todoapp .create-container {
     display: none;
@@ -90,7 +83,6 @@ header .btnCreateTask:hover {
     outline: 2px solid #d3d2de;
     border-radius: 4px;
     transition: all .2s;
-
 }
 
 .todoapp .input-todo:focus {
@@ -100,7 +92,6 @@ header .btnCreateTask:hover {
 .todoapp .todo-create .filter-tag {
     -webkit-appearance: none;
     text-align:  center;
-    font-weight: 600;
     cursor: pointer;
     padding: 5px 10px;
     position: absolute;
@@ -113,8 +104,7 @@ header .btnCreateTask:hover {
 }
 
 
-/* todo filters */
-
+/* --------------------------- todo filters --------------------------- */
 
  .todoapp .filterby .filter-container {
     padding: 0px;
@@ -133,10 +123,11 @@ header .btnCreateTask:hover {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
-/* todos */
+/* --------------------------- todos --------------------------- */
+
 .todoapp .todo-list {
     margin: 0;
     padding: 0;
@@ -156,12 +147,10 @@ header .btnCreateTask:hover {
     padding: 0px 30px;
 }
 
-.todo-list .check-toggle, .circle {
-    position: absolute;
-    left: 30px;
-}
 
 .todo-list .circle {
+    position: absolute;
+    left: 32px;
     border: solid 4px ;
     width: 35px;
     height: 35px;
@@ -169,6 +158,8 @@ header .btnCreateTask:hover {
 }
 
 .todo-list .check-toggle {
+    position: absolute;
+    /* left: 30px; */
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -215,67 +206,55 @@ header .btnCreateTask:hover {
 }
 
 
-.todo-list p {
+.todo-list label {
     font-weight: 700;
-    position: absolute;
-    left: 80px;
+    position: relative;
+    left: 60px;
     word-wrap: break-word;
-    max-width: 75%;
-    margin: auto;
+    max-width: 80%;
 }
 
-.todo-list .todo-container.completed p {
+.todo-list .todo-container.completed label {
     color: #cdcdcd;
     text-decoration: line-through;
 }
 
 .todo-list .todo-container .destroy {
-    display: none;
-    right: 25px;
+    opacity: 0;
+    right: 30px;
     position: absolute;
-    border: none;
-	background: none;
-    padding: 0px;
-    width: 30px;
-    height: 30px;
     cursor: pointer;
-}
-
-.todo-list .todo-container .destroy svg{
-    position: relative;
-    top: 2px;
-    width: 20px;
-    height: 20px;
     color: #c00021;
-    transform: all .3s;
-    transition: all .2s;
+    transition: all .3s ease-out;  
+    text-align: center;
+    font-size: clamp(24px, 3vw, 30px); 
 }
 
-.todo-list .todo-container .destroy svg:hover {
+
+.todo-list .todo-container .destroy:hover {
     color: #ff002b;
     transform:scale(1.05);
 }
 
 .todo-list .todo-container:hover .destroy{
-    display: block;
+    opacity: 1;
+    
 }
 
-                        /* Aside */
+/* --------------------------- button delete done --------------------------- */
 
-.container-main aside {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.delete-all {
+    width: clamp(400px, 90vw, 800px);
+    margin: auto;
+    position: initial;
     padding: 20px;
-    width: clamp(200px, 30vw, 400px);
     text-align: center;
     border-radius: var(--radius);
     background: #fff;
-    border: 1px solid #e1e5ee;
+    outline: 1px solid #e1e5ee;
 }
 
-aside .todo-delete {
+.delete-all .todo-delete {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -287,39 +266,25 @@ aside .todo-delete {
     transition: all .2s;
 }
 
-aside .todo-delete:hover {
+.delete-all .todo-delete:hover {
     box-shadow: 0 0 10px hsl(350, 77%, 53%, .4);
 }
 
-                        /*  footer */
-.footer {
-	padding: 10px 15px;
-	height: 20px;
-	text-align: center;
-	font-size: 15px;
-	border-top: 1px solid #e6e6e6;
-}
 
-.footer:before {
-	content: '';
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	height: 50px;
-	overflow: hidden;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
-	            0 8px 0 -3px #f6f6f6,
-	            0 9px 1px -3px rgba(0, 0, 0, 0.2),
-	            0 16px 0 -6px #f6f6f6,
-	            0 17px 2px -6px rgba(0, 0, 0, 0.2);
-}
+/* --------------------------- responsive --------------------------- */
 
-.todo-count {
-	float: left;
-	text-align: left;
-}
+@media only screen and (max-width: 600px){
+    .todoapp .todo-list .todo-container{
+        padding: 0px 20px;
+    }
+    
+    .todoapp .todo-list .todo-container .destroy{
+        right: 20px;
+    }
 
-.todo-count strong {
-	font-weight: 300;
+    .todoapp .todo-list .todo-container .circle {
+        left: 22px;
+    }
+
+
 }

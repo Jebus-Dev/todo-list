@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css ">
+    
     <title>Todo List</title>
 </head>
 <body>
@@ -34,7 +35,6 @@
                 <ul class="filters filter-container">
                     <li>
                         <a class="selected filter active" href="#/">all</a>
-                        <div class="behind"></div>
                     </li>
                     <li>
                         <a class="filter" href="#/active">active</a>
@@ -52,13 +52,12 @@
 
         </main>
 
-        <aside>
-            <button class="todo-delete">Delete</button>
+        <div class="delete-all">
             <label id="todos-done"></label>
-        </aside>
+            <button class="todo-delete">Delete</button>
+        </div>
     </div>
-
     <script src="main.js" type="module"></script>
-
+    <script src="https://kit.fontawesome.com/57c9604602.js" crossorigin="anonymous"></script>
 </body>
 </html>
