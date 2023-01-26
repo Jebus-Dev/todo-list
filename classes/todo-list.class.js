@@ -42,7 +42,6 @@ export class TodoList {
 
     saveLocalStorage(){
         localStorage.setItem('todo', JSON.stringify(this.todos));
-        localStorage.setItem('todosDondeStorage', '')
     }
 
     loadLocalStorage(){
